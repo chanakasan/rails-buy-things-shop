@@ -8,9 +8,10 @@ feature 'Adding new products' do
     scenario 'adds a new product' do
         visit '/products'
         click_link('New Product')
+        fill_in 'Name', with: 'Used Airplane'
+        fill_in 'Price', with: '9.99'
+        click_button 'Create Product'
 
-        expect(page).to have_content('New Product')
-        expect(page).to have_content('Name')
-        expect(page).to have_content('Price')
+        expect(page).to have_content('Product was successfully created')
     end
 end
