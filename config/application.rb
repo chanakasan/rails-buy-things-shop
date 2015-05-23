@@ -30,5 +30,7 @@ module BuyThingsShop
         g.request_specs false
         g.routing_specs false
     end
+
+    config.assets.paths << Rails.root.join("app", "assets", "bower_components")
   end
 end
